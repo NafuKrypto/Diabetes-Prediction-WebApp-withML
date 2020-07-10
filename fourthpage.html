@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer  </title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.jumbotron {
+  background-color: white;
+   
+}
+body{ margin-left: 150px;}
+h1{text-align:center}
+</style>
+<body  >
+  <div class="container">
+  
+<h1>Breast Cancer Risk Factor</h1>
+     
+
+    <form action="{{ url_for('foretell')}}"method="post">
+
+ 
+
+    
+         <label for="rdsm"><h3>Radius mean</h3><h4>(mean of distances from center to points on the perimeter)</h4></label>
+         <input type="text"   name="rdsm"><br><br>
+
+         <label for="texm"><h3>Texture mean</h3><h4>(standard daviation of gray scale values)</h4></label>
+         <input type="text" name="texm"><br><br>
+
+         <label for="perm"><h3>Perimeter mean</h3></label>
+         <input type="text"   name="perm"><br><br>
+
+         <label for="aream"><h3>Area mean</h3></label>
+         <input type="text"   name="aream"><br><br>
+
+         <label for="smtm"><h3>Smoothness mean</h3><h4>(local variation in radius lengths)</h4></label>
+         <input type="text"  name="smtm"><br><br>
+
+         <label for="cmpm"><h3>Compactness mean</h3><h4>(perimeter^2/area-1.0)</h4></label>
+         <input type="text"   name="cmpm"><br><br>
+
+         <label for="cncm"><h3>Concavity mean</h3><h4>(severity of concave portions of the contour)</h4></label>
+         <input type="text"  name="cncm"><br><br>
+
+         <label for="cnpm"><h3>Concave points mean</h3><h4>(number of concave portions of the contour)</h4></label>
+         <input type="text"   name="cnpm"><br><br>
+
+         <label for="smym"><h3>Symmetry mean</h3></label>
+         <input type="text"  name="smym"><br><br>
+
+         <label for="fdm"><h3>Fractal dimension mean</h3><h4>(coastline approximation-1)</h4></label>
+         <input type="text"   name="fdm"><br><br>
+		 
+		 <label for="rdss"><h3>Radius_se</h3><h4>(mean of distances from center to points on the perimeter)</h4></label>
+         <input type="text"   name="rdss"><br><br>
+
+         <label for="texs"><h3>Texture_s</h3><h4>(standard daviation of gray scale values)</h4></label>
+         <input type="text"  name="texs"><br><br>
+
+         <label for="pers"><h3>Perimeter_se</h3></label>
+         <input type="text"   name="pers"><br><br>
+
+         <label for="areas"><h3>Area_se</h3></label>
+         <input type="text"   name="areas"><br><br>
+
+         <label for="smts"><h3>Smoothness_se</h3><h4>(local variation in radius lengths)</h4></label>
+         <input type="text"   name="smts"><br><br>
+
+         <label for="cmps"><h3>Compactness_se</h3><h4>(perimeter^2/area-1.0)</h4></label>
+         <input type="text"   name="cmps"><br><br>
+
+         <label for="cncs"><h3>Concavity_se</h3><h4>(severity of concave portions of the contour)</h4></label>
+         <input type="text"  name="cncs"><br><br>
+
+         <label for="cnps"><h3>Concave points_se</h3><h4>(number of concave portions of the contour)</h4></label>
+         <input type="text"   name="cnps"><br><br>
+
+         <label for="smys"><h3>Symmetry_se</h3></label>
+         <input type="text"   name="smys"><br><br>
+
+         <label for="fds"><h3>Fractal dimension_se</h3><h4>(coastline approximation-1)</h4></label>
+         <input type="text"   name="fds"><br><br>
+		 
+		 <label for="rdsw"><h3>Radius worst</h3><h4>(mean of distances from center to points on the perimeter)</h4></label>
+         <input type="text"   name="rdsw"><br><br>
+
+         <label for="texw"><h3>Texturen worst</h3><h4>(standard daviation of gray scale values)</h4></label>
+         <input type="text"  name="texw"><br><br>
+
+         <label for="perw"><h3>Perimeter worst</h3></label>
+         <input type="text"   name="perw"><br><br>
+
+         <label for="areaw"><h3>Area worst</h3></label>
+         <input type="text"  name="areaw"><br><br>
+
+         <label for="smtw"><h3>Smoothness worst</h3><h4>(local variation in radius lengths)</h4></label>
+         <input type="text"   name="smtw"><br><br>
+
+         <label for="cmpw"><h3>Compactness worst</h3><h4>(perimeter^2/area-1.0)</h4></label>
+         <input type="text"  name="cmpw"><br><br>
+
+         <label for="cncw"><h3>Concavity worst</h3><h4>(severity of concave portions of the contour)</h4></label>
+         <input type="text"   name="cncw"><br><br>
+
+         <label for="cnpw"><h3>Concave pointsworst</h3><h4>(number of concave portions of the contour)</h4></label>
+         <input type="text"   name="cnpw"><br><br>
+
+         <label for="smyw"><h3>Symmetry worst</h3></label>
+         <input type="text"  name="smyw"><br><br>
+
+         <label for="fdw"><h3>Fractal dimension worst</h3><h4>(coastline approximation-1)</h4></label>
+         <input type="text"  name="fdw"><br><br>
+
+
+
+         <br>
+           <input type="submit" class="btn btn-success btn-lg">
+         </form>
+ <input type="reset" class="btn btn-success btn-lg">
+ <main><p>
+   
+ {% if msg=="M" %}
+<hr/>
+    <center><h1>Your Result:</h1><strong><i>Positive!! Your tumour is malignant and You have Breast Cancer</i></strong></center>
+{% endif %}
+{% if msg=="B"  %}
+<hr/>
+   <center><h2>Your Result:</h2><strong><i>Negative!! Your tumour is benign You do not have Breast Cancer </i></strong></center><br>
+
+{% endif %}
+
+ {% block content %}
+      {% endblock %}
+      
+      </div>
+</body>
+</html>

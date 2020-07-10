@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.jumbotron {
+  background-color: #00000; /* Dark cyan*/
+  color: #ffffff;
+}
+</style>
+
+<body style="background :white">
+
+<div class="container">
+    <center>
+    
+<h1>Diabetes Prediction</h1>
+    </div>
+ 
+        <!-- Main Input For Receiving Query to our ML -->
+<form action="{{ url_for('predict')}}"method="post">
+
+<label>Enter Pregnency(number of pregnent):</label><input type="text" name="pregnency" placeholder="Pregnency number" required></br>
+<label>Enter Glucose Level:</label><input type="text" name="glucose" placeholder="Glucose" required>    </br>
+<label>Enter BP(Blood Pressure):</label><input type="text" name="bp" placeholder="BP(Blood Pressure)" required></br>
+<label>Enter SkinThikckness:</label><input type="text" name="skin" placeholder="SkinThikckness" required> </br>
+<label>Enter Insulin Level:</label><input type="text" name="insulin" placeholder="Insulin Level" required></br>
+<label>Enter BMI:</label><input type="text" name="bmi" placeholder="BMI" required></br>
+<label>Enter DiabetesPedigreeFunction:</label><input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required> </br>
+<label>Enter Age:</label><input type="text" name="age" placeholder="Age" required></br>
+   
+    
+    
+       
+    	 
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">predict</button>
+ </form>
+
+ <input type="reset" class="btn btn-success btn-lg">
+<main><p>
+   
+ {% if msg=="Success" %}
+<hr/>
+    <center><h1>Your Result:</h1><strong><i>Positive!! You have diabetes</i></strong></center>
+{% endif %}
+{% if msg=="Unsuccess"  %}
+<hr/>
+   <center><h2>Your Result:</h2><strong><i>Negative!! You do not have diabetes<br>Probability that you will have diabetes in future:{{ prob }}&percnt;</i></strong></center><br>
+
+{% endif %}
+
+
+<br><br>
+
+{{ prediction_text }}
+
+ 
+ <a href="{{ url_for('page')}}" >Breast Cancer Prediction</a> 
+ 
+
+
+
+<a href="practice.html" style="color: black"> Click here to back!!!
+     </a>
+     
+       
+
+</div>
+ 
+
+ 
+</div>
+ {% block content %}
+      {% endblock %}
+</body>
+</html>
